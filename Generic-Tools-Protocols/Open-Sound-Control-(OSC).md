@@ -517,7 +517,8 @@ You can set several preferences which are stored when you exit the DAW. These ar
 
 ### Actions
 
-* Action 1-8: Select the Action to execute if an /action command is received
+* Action 1-8: Select the Action to execute if an /action/{n} command is received
+* ActionID: Execute the given Action if an /action {action_id} command is received
 
 ### Debug
 
