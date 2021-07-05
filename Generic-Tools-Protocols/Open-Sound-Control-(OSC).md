@@ -203,13 +203,13 @@ The parameters of the command documentation below are as follows:
 | Command                    | Value         | Comment                                                    |
 | :--------------------      |:-----------   |:---------------                                            |
 | /browser/isActive                            | {0,1}    | Is the browser active?                        |
-| /browser/filter/{1-6}/wildcard               | {text}   | The name of the wildcard for the filter.      |
-| /browser/filter/{1-6}/exists                 | {0,1}    | Does the filter exist?                        |
-| /browser/filter/{1-6}/name                   | {text}   | The name of the filter.                       |
-| /browser/filter/{1-6}/item/{1-16}/exists     | {0,1}    | Does the filter item exist?                   |
-| /browser/filter/{1-6}/item/{1-16}/name       | {text}   | The name of the filter item.                  |
-| /browser/filter/{1-6}/item/{1-16}/hits       | {0-N}    | The number of result hits if this filter item is applied. |
-| /browser/filter/{1-6}/item/{1-16}/isSelected | {0,1}    | Is the filter item selected?                  |
+| /browser/filter/{1-8}/wildcard               | {text}   | The name of the wildcard for the filter.      |
+| /browser/filter/{1-8}/exists                 | {0,1}    | Does the filter exist?                        |
+| /browser/filter/{1-8}/name                   | {text}   | The name of the filter.                       |
+| /browser/filter/{1-8}/item/{1-16}/exists     | {0,1}    | Does the filter item exist?                   |
+| /browser/filter/{1-8}/item/{1-16}/name       | {text}   | The name of the filter item.                  |
+| /browser/filter/{1-8}/item/{1-16}/hits       | {0-N}    | The number of result hits if this filter item is applied. |
+| /browser/filter/{1-8}/item/{1-16}/isSelected | {0,1}    | Is the filter item selected?                  |
 | /browser/result/{1-16}/exists                | {0,1}    | Does the result item exist?                   |
 | /browser/result/{1-16}/name                  | {text}   | The name of the result item.                  |
 | /browser/result/{1-16}/isSelected            | {0,1}    | Is the result item selected?                  |
@@ -454,8 +454,8 @@ The following commands are additional for the equalizer device.
 | /browser/device/before      |       | Activates the browser to insert a device before the currently selected device. |
 | /browser/commit             |       | Commits the current selection in the browser.                                  |
 | /browser/cancel             |       | Cancels the current browser session.                                           |
-| /browser/filter/{1-6}/{+,-} |       | The columns are as follows: 1: Favorites, 2: Location, 3: File Type, 4: Category, 5: Tags, 6: Creator |
-| /browser/filter/{1-6}/reset |       | Resets the filter of the column.                                               |
+| /browser/filter/{1-8}/{+,-} |       | The columns are as follows: 1: Favorites, 2: Location, 3: File Type, 4: Category, 5: Tags, 6: Creator |
+| /browser/filter/{1-8}/reset |       | Resets the filter of the column.                                               |
 | /browser/result/{+,-}       |       | Select the next/previous result.                                               |
 | /browser/tab/{+,-}          |       | Select the next/previous tab (Devices/Presets/Multisamples/...).               |
 
