@@ -517,7 +517,8 @@ You can set several preferences which are stored when you exit the DAW. These ar
 
 ### Actions
 
-* Action 1-8: Select the Action to execute if an /action command is received
+* Action 1-8: Select the Action to execute if an /action/{1-8} command is received
+* ActionID: Execute the given Bitwig Action by ID if an /actionID {ID} command is received
 
 ### Debug
 
