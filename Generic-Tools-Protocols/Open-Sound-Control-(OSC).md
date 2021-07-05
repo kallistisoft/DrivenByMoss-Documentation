@@ -61,6 +61,21 @@ The parameters of the command documentation below are as follows:
 | /launcher/postRecordingTimeOffset | {0-4000} | The time offset of the post recording action in beats.         |
 | /launcher/defaultQuantization     | {none,1,2,4,8,1/2,1/4,1/8,1/16} | The default clip launcher quantization. |
 
+### Send - Groove
+| Command                | Value         | Comment                                                          |
+| :----------------------|:--------------|:-----------------------------------------------------------------|
+| /groove                | {0,1,-}       | Is groove active?                                                |
+| /groove/value          | {0-MAX_VALUE} | The value of the groove shuffle parameter                        |
+| /groove/valueStr       | {text}        | The value of the groove shuffle parameter formatted as text      |
+| /groove/rate           | {0,1}         | The value of the groove shuffle rate parameter (1/8, 1/16)       |
+| /groove/rateStr        | {text}        | The value of the groove shuffle rate parameter formatted as text |
+| /groove/accentValue    | {0-MAX_VALUE} | The value of the groove accent parameter                         |
+| /groove/accentValueStr | {text}        | The value of the groove accent parameter formatted as text       |
+| /groove/accentRate     | {0,1,2}       | The value of the groove accent rate parameter (1/4, 1/8, 1/16)   |
+| /groove/accentRateStr  | {text}        | The value of the groove accent rate parameter formatted as text  |
+| /grove/phase           | {0-MAX_VALUE} | The value of the groove phase parameter                          |
+| /groove/phaseStr       | {text}        | The value of the groove phase parameter formatted as text        |
+
 ### Send - Layout and panels
 
 | Command              | Value      | Comment                                                                      |
@@ -275,6 +290,18 @@ The parameters of the command documentation below are as follows:
 | /launcher/postRecordingAction     | {off,play_recorded,record_next_free_slot,stop,return_to_arrangement,return_to_previous_clip,play_random} | The action to execute after recording a clip. |
 | /launcher/postRecordingTimeOffset | {0-4000} | The time offset of the post recording action in beats.         |
 | /launcher/defaultQuantization     | {none,1,2,4,8,1/2,1/4,1/8,1/16} | The default clip launcher quantization. |
+
+
+### Receive - Groove
+| Command                | Value         | Comment                                                          |
+| :----------------------|:--------------|:-----------------------------------------------------------------|
+| /groove                | {0,1,-}       | Disbale/Enable/toggle groove?                                    |
+| /groove/value          | {0-MAX_VALUE} | Set value of the groove shuffle parameter                        |
+| /groove/rate           | {0,1}         | Set value of the groove shuffle rate parameter (1/8, 1/16)       |
+| /groove/accentValue    | {0-MAX_VALUE} | Set value of the groove accent parameter                         |
+| /groove/accentRate     | {0,1,2}       | Set value of the groove accent rate parameter (1/4, 1/8, 1/16)   |
+| /grove/phase           | {0-MAX_VALUE} | Set value of the groove phase parameter                          |
+
 
 ### Receive - Layout and panels
 
