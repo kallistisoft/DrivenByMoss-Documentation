@@ -129,6 +129,35 @@ The parameters of the command documentation below are as follows:
 | /track/selected/{attribute}       | {value}       | All attributes as above for the currently selected track.    |
 | /master/{attribute}               | {value}       | All attributes as above for the master track, except sends.  |
 
+
+### Send - Effects Track
+
+| Command                | Value      | Comment                                                                    |
+| :--------------------  |:-----------|:---------------                                                            |
+| /send/{1-8}/name       | {text}     | The name of the effect track                                               |
+| /send/{1-8}/type       | {effect}   | The type of the track.                                                     |
+| /send/{1-8}/activated  | {0,1}      | Is the track active?                                                       |
+| /send/{1-8}/exists     | {0,1}      | Does the track exist?                                                      |
+| /send/{1-8}/canHoldNotes     | {0,1} | Can the track hold notes?                             |
+| /send/{1-8}/canHoldAudioData | {0,1} | Can the track hold audio?                                                |
+| /send/{1-8}/position   | {0-N-1}    | The position of the track in all tracks, 0-based                           |
+| /send/{1-8}/selected   | {0,1}      | Is the track selected?                                                     |
+| /send/{1-8}/volume     | {0-MAX_VALUE} | The volume of the track.                                                |
+| /send/{1-8}/volumeStr  | {text}     | The volume of the track formatted as text.                                 |
+| /send/{1-8}/pan        | {0-MAX_VALUE} | The panorama of the track. 0 is full left. MAX_VALUE full right.        |
+| /send/{1-8}/panStr     | {text}     | The panorama of the track formatted as text.                               |
+| /send/{1-8}/mute       | {0,1}      | Is the track muted?                                                        |
+| /send/{1-8}/solo       | {0,1}      | Is the track soloed?                                                       |
+| /send/{1-8}/recarm     | {0}        | Is the track armed for recording? (always false)                                         |
+| /send/{1-8}/monitor    | {0}        | Is monitoring enabled for the track? (always false)                                      |
+| /send/{1-8}/autoMonitor | {0}      | Is auto monitoring enabled for the track? (always false)                               |
+| /send/{1-8}/crossfadeMode/{A,B,AB} | Crossfade mode set for the track: A = Channel A, B = Channel B, AB = both. |
+| /send/{1-8}/vu         | {0-MAX_VALUE} | The current VU meter output value of the track when played back.        |
+| /send/{1-8}/color                | {color} | The color fo the track.                                            |
+| /send/selected/pinned            | {0,1}         | Is the cursor track pinned? Doesn't follow selection in DAW. |
+| /send/selected/{attribute}       | {value}       | All attributes as above for the currently selected track.    |
+
+
 ### Send - Scenes, Slots and Clips
 
 | Command                | Value      | Comment                                                                     |
@@ -368,9 +397,45 @@ The parameters of the command documentation below are as follows:
 | /track/{1-8}/send/{1-8}/volume/touched  | {0,1}         | Turn off/on, toggle the send volume touched state.      |
 | /track/{1-8}/enter           |               | Enter the group, if the track is a group/folder track.             |
 | /track/{1-8}/color           | {color}       | Set the color of the track.                                        |
+| /track
 | /track/selected/pinned       | {0,1,-}       | Unpin, pin, toggle pinning of the selected track.                  |
 | /track/selected/{attribute}  | {value}       | As above.                                                          |
 | /master/{attribute}          | {value}       | As above, except sends.                                            |
+
+### Receive - Effects Track
+
+| Command                     | Value         | Comment                                                            |
+| :----------------           |:-----------   |:---------------                                                    |
+| /send/indicate/volume       | {0,1,-}       | Dis-/enable, toggle the indication of the volumes on all 8 tracks. |
+| /send/indicate/pan          | {0,1,-}       | Dis-/enable, toggle the indication of the pans of all 8 tracks.    |
+| /send/indicate/send/{1-8}   | {0,1,-}       | Dis-/enable, toggle the indication of the send 1-8 of all 8 tracks.|
+| /send/bank/{+,-}            |               | Scroll the track bank by 1.                                        |
+| /send/bank/page/{+,-}       |               | Scroll the track bank by 8.                                        |
+| /send/{+,-}                 |               | Select the next/previous track.                                    |
+| /send/add/audio             |               | Add a new audio track.                                             |
+| /send/add/effect            |               | Add a new effect track.                                            |
+| /send/add/instrument        |               | Add a new instrument track.                                        |
+| /send/vu                    | {0,1,-}       | En-/Disable VU-Meter notifications.                                |
+| /send/stop                  |               | Stop the playing clip on the track.                                |
+| /send/{1-8}/name {text}     |               | Set a new name for the effects track.                              |
+| /send/{1-8}/activated       | {0,1,-}       | Dis-/enable, toggle the track activation.                          |
+| /send/{1-8}/crossfadeMode/{A,B,AB} |        | Set the crossfade mode: A = Channel A, B = Channel B, AB = both.   |
+| /send/{1-8}/select          | {1,-}         | Select the track.                                                  |
+| /send/{1-8}/duplicate       |               | Duplicate the track.                                               |
+| /send/{1-8}/remove          |               | Remove/delete the track.                                           |
+| /send/{1-8}/volume          | {0-MAX_VALUE} | Set the volume of the track.                                       |
+| /send/{1-8}/volume/indicate | {0,1,-}       | Turn off/on, toggle the volume indication.                         |
+| /send/{1-8}/volume/reset    |               | Reset the volume value to its' default.                            |
+| /send/{1-8}/volume/touched  | {0,1}         | Turn off/on, toggle the volume touched state.                      |
+| /send/{1-8}/pan             | {0-MAX_VALUE} | Set the panorama of the track.                                     |
+| /send/{1-8}/pan/indicate    | {0,1}         | Turn off/on, toggle the panorama indication.                       |
+| /send/{1-8}/pan/reset       |               | Reset the panorama value to its' default.                          |
+| /send/{1-8}/pan/touched     | {0,1}         | Turn off/on, toggle the panorama touched state.                    |
+| /send/{1-8}/mute            | {0,1,-}       | Dis-/enable, toggle mute.                                          |
+| /send/{1-8}/solo            | {0,1,-}       | Dis-/enable, toggle solo.                                          |
+| /send/{1-8}/color           | {color}       | Set the color of the track.                                        |
+| /send/selected/pinned       | {0,1,-}       | Unpin, pin, toggle pinning of the selected track.                  |
+| /send/selected/{attribute}  | {value}       | As above.                                                          |
 
 ### Receive - Scenes, Slots and Clips
 
@@ -513,6 +578,12 @@ The following commands are additional for the equalizer device.
 | :----------------    |:----------- |:---------------                          |
 | /marker/{1-8}/launch |             | Start playback at the marker position.   |
 | /marker/bank/{+,-}   |             | Scroll the marker bank up-/down.         |
+   
+### Receive - Action ID
+| Command              | Value       | Comment                                     |
+| :----------------    |:----------- |:---------------                             |
+| /actionID            | {action_id} | Execute the given Bitwig API Action by ID   |
+
 
 ## Preferences Settings
 
@@ -546,7 +617,6 @@ You can set several preferences which are stored when you exit the DAW. These ar
 ### Actions
 
 * Action 1-8: Select the Action to execute if an /action/{1-8} command is received
-* ActionID: Execute the given Bitwig Action by ID if an /actionID {ID} command is received
 
 ### Debug
 
@@ -555,6 +625,10 @@ Enable only for finding issues since this has a performance impact.
 * Log input commands: Received OSC commands are logged to the console if enabled
 * Log output commands: Transmitted OSC commands are logged to the console if enabled
 * Filter heartbeat commands: Ping commands are not logged if enabled
+
+### Global Takeover Mode
+
+The OSC controller respects Bitwig's global controller takeover mode. When using OSC messages in a headless manner this may result in unobvious responses to received control messages. If you are using the OSC controller without a reactive GUI front-end it's recommended to set the global takeover mode to immediate.
 
 <div style="page-break-after: always; visibility: hidden"> 
 \pagebreak 
