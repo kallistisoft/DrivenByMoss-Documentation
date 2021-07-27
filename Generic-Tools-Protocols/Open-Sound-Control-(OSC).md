@@ -173,7 +173,9 @@ The parameters of the command documentation below are as follows:
 | /track/{1-8}/clip/{1-8}/isRecording       | {0,1}    | Is the slot currently recording a clip?                    |
 | /track/{1-8}/clip/{1-8}/isPlayingQueued   | {0,1}    | Is the clip queued for playback?                           |
 | /track/{1-8}/clip/{1-8}/isStopQueued      | {0,1}    | Is the clip queued to be stopped? (does not work)          |
-| /track/{1-8}/clip/{1-8}/isRecordingQueued | {0,1}    | Is the slot queued to record a clip?                       |
+| /track/{1-8}/clip/{1-8}/isRecordingQueued | {0,1}    | Is the slot queued to record a clip?       
+| /track/{1-8}/clip/{1-8}/length            | {0-MAX_VALUE}    | Length of the selected clip in quarter notes |
+| /track/{1-8}/clip/{1-8}/lengthStr         | {text}    | Length of the selected clip as measures.quarters.eights:ticks |
 | /clip/exists                              | {0,1}    | Does the cursor clip point to an existing clip?            |
 | /clip/color                               | {color}  | The color of the clip the cursor clip is pointing to.      |
 | /clip/pinned                              | {0,1}    | Is the cursor clip pinned? Doesn't follow selection in DAW.|
